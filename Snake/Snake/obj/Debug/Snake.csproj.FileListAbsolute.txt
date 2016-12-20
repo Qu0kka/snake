@@ -1,6 +1,0 @@
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\bin\Debug\Snake.exe.config
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\bin\Debug\Snake.exe
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\bin\Debug\Snake.pdb
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\obj\Debug\Snake.csprojResolveAssemblyReference.cache
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\obj\Debug\Snake.exe
-D:\ДОКУМЕНТЫ\IT\snake\Snake\Snake\obj\Debug\Snake.pdb
