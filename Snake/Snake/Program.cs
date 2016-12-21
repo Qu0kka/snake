@@ -10,60 +10,45 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            int x = 1;
-            Func1(x);                                   //В функции используется копия x
-            Console.WriteLine("Call Funk1. x = " + x);
+            Point p1 = new Point(4, 5, '#');
+            p1.Draw();
 
+            Point p2 = new Point(1, 3, '$');
+            p2.Draw();
 
-            x = 1;
-            Func2(x);
-            Console.WriteLine("Call Func2. x = " + x);
+            Point p3 = new Point(5, 3, '*');
+            Point p4 = new Point(7, 0, '%');
 
-            x = 1;
-            Func3(x);
-            Console.WriteLine("Call Func3. x = " + x);
+            List<int> numList = new List<int>();
+            numList.Add(5);
+            numList.Add(7);
+            numList.Add(10);
 
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
 
-            Point p1 = new Point(1, 3, '*');
-            Move(p1, 10, 10);
-            Console.WriteLine("Call Move. p1.x = " + p1.x + ", p1.y = " + p1.y); //Изменяются координаты самой точки p1 (p и p1 указывают на одну область памяти, где хранятся координаты и символ)
+            foreach(int i in numList) // Цикл выводит i-тые элементы списка
+            {
+                Console.WriteLine(i);
+            }
 
-            Point p2 = new Point(4, 5, '#');
-            p1 = p2;                          // p1 указывает на ту же область памяти что и p2
-            p1.x = 7;
-            p1.y = 8;
-            Console.WriteLine("p1 = p2. p1.x = " + p1.x + ", p1.y = " + p1.y + "; p2.x = " + p2.x + ", p2.y = " + p2.y);
+            numList.RemoveAt(0); //Удалить 0-ой элемент списка
 
-            Point p3 = new Point(2, 3, '&');
-            Reset(p3);                      // p3 останется без изменений, поскольку в функции изменялась сама переменная p, содержащая адрес
-            Console.WriteLine("Call Reset. p3.x = " + p3.x + ", p3.y = " + p3.y);
+            List<Point> pList = new List<Point>(); //Список точек
+            pList.Add(p1);
+            pList.Add(p2);
+            pList.Add(p3);
+            pList.Add(p4);
+
+            List<char> charList = new List<char>(); //Список символов
+            charList.Add('#');
+            charList.Add('$');
+            charList.Add('%');
+            charList.Add('*');
 
             Console.ReadLine();
         }
-        public static void Func1(int value)
-        {
 
-        }
-
-        public static void Func2(int value)
-        {
-            value = value + 1;
-        }
-
-        public static void Func3(int x)
-        {
-            x = x + 1;
-        }
-
-        public static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
-
-        public static void Reset(Point p) //Пересоздание точки
-        {
-            p = new Point(1, 2,'$');
-        }
     }
 }
