@@ -14,10 +14,10 @@ namespace Snake
             Console.SetBufferSize(80, 25);
 
             // Рамочка
-            HorizontalLine Upline = new HorizontalLine(0, 78, 0, '*');
-            HorizontalLine Downline = new HorizontalLine(0, 78, 24, '*');
-            VerticalLine Leftline = new VerticalLine(0, 0, 24, '*');
-            VerticalLine Rightline = new VerticalLine(78, 0, 24, '*');
+            HorizontalLine Upline = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine Downline = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine Leftline = new VerticalLine(0, 0, 24, '+');
+            VerticalLine Rightline = new VerticalLine(78, 0, 24, '+');
             Upline.Drow();            
             Downline.Drow();
             Leftline.Drow();
@@ -25,12 +25,9 @@ namespace Snake
 
 
             // точки
-            Point p1 = new Point(4, 5, '#');
-            p1.Draw();
-
-            Point p2 = new Point(1, 3, '$');
-            p2.Draw();
-
+            Point p1 = new Point(4, 5, '*');
+            Snake snake = new Snake(p1, 4, Direction.RIGHT);
+            snake.Drow();
             
 
             Console.ReadLine();
