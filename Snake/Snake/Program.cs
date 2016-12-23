@@ -29,16 +29,18 @@ namespace Snake
             Point p1 = new Point(4, 5, '*');
             Snake snake = new Snake(p1, 4, Direction.RIGHT);
             snake.Drow();
-            snake.Move();
-            Thread.Sleep(300); // Задержка на 300 мс
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
 
-            Console.ReadLine();
+            while (true) // Бесконечный цикл
+            {
+                if (Console.KeyAvailable) // Если была нажата какая-либо клавиша
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); // Читаем какая кнопка была нажата
+                    snake.HandleKey(key.Key); // Обрабатываем нажатие клавии
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
+
         }
 
     }

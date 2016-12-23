@@ -40,5 +40,17 @@ namespace Snake
             nextPoint.Move(1, direction); // Сдвигаем точку-копию головы по направлению direction
             return nextPoint; // метод возвращает точку-новую голову
         }
+
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)    // если нажата левая стрелка
+                direction = Direction.LEFT;   // то переменная direction принимает значение LEFT
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+        }
     }
 }
