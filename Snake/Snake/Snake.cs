@@ -41,6 +41,23 @@ namespace Snake
             return nextPoint; // метод возвращает точку-новую голову
         }
 
+        // метод поедания
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym; //символ еды становится символом змейки
+                pList.Add(food); // Добавляем в список точку еды
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)    // если нажата левая стрелка
