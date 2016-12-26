@@ -58,6 +58,18 @@ namespace Snake
 
         }
 
+        // Метод, обрабатывающий столкновение  головы и хвоста змейки
+        internal bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++) // провера пересечения с любой точкой змейки, кроме головы
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)    // если нажата левая стрелка
