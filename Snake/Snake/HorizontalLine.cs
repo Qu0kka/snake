@@ -19,5 +19,12 @@ namespace Snake
             }
         }
 
+        public override void Drow() // Переопределение метода Drow
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow; // желтй цвет для горизонтальнх линий
+            base.Drow(); // Используется описание метода соответствующее базовому классу
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
     }
 }

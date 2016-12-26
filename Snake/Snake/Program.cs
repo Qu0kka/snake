@@ -24,7 +24,31 @@ namespace Snake
             Leftline.Drow();
             Rightline.Drow();
 
+            // Создаем вертикальную линюю
+            VerticalLine vl = new VerticalLine(2, 5, 10, '^');
+            //Draw(vl);
 
+            // Создаем змейку
+            Point p = new Point(4, 5, '*');
+            Figure fsnake = new Snake(p, 3, Direction.RIGHT); // Фигура fsnake (не змейка, а именно фигура)
+           // Draw(fsnake);
+            Snake snake = (Snake)fsnake; // Явное приведение типов, fsnake теперь змейка
+
+            // Создаем горизонтальную линюю
+            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&');
+
+            // Создаем список фигур
+            List<Figure> figures = new List<Figure>();
+            figures.Add(fsnake);
+            figures.Add(vl);
+            figures.Add(hl);
+
+            foreach(var f in figures)
+            {
+                f.Drow();
+            }
+
+/*
             // точки
             Point p1 = new Point(4, 5, '*');
             Snake snake = new Snake(p1, 4, Direction.RIGHT);
@@ -56,8 +80,14 @@ namespace Snake
                     snake.HandleKey(key.Key); // Обрабатываем нажатие клавии
                 }
             }
-
+*/
            
+        }
+
+        // Метод Draw для отрисовки фигур
+        static void Draw(Figure figure)
+        {
+            figure.Drow();
         }
 
     }

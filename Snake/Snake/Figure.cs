@@ -10,7 +10,7 @@ namespace Snake
     {
         protected List<Point> pList;
 
-        public void Drow()
+        public virtual void Drow() // Виртуальный (переопределяемый) метод
         {
             foreach (Point p in pList)
             {
